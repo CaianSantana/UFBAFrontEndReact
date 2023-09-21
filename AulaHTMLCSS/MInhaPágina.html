@@ -33,14 +33,15 @@
             <p>Acesse meu <a href="https://github.com/CaianSantana">Github</a></p>
             <hr>
             <p>Me mande uma mensagem:</p>
-            <form action="MinhaPágina.html">
-                <label for="nome">Seu nome:</label>
+            <form>
+                <label for="nome" >Seu nome:</label>
                 <input type="text" id="nome" name="nome">
                 <p></p>
                 <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="10" cols="33">Digite sua mensagem aqui...   
-                </textarea>
+                <textarea id="mensagem" name="mensagem" rows="10" cols="33" placeholder="Digite sua mensagem aqui..."></textarea>
+                <label for="submit"><input id="submit" type="submit" value="enviar" onclick="salvaRespostas()"></input></label>
             </form>
         </div>
+        <script type="text/javascript" src="script.js"></script>
     </body>
 </html>
