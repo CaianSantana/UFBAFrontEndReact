@@ -1,27 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import Table from './Table';
 
-function App() {
-  return (
-
-    <h1>Usar o create-react-app demora pra xuxu!!!</h1>
-    /*<div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>*/
-  );
+class App extends Component {
+  render(){
+    const alunos = [
+      {
+        nome: "Dudu",
+        turma: "Programação Web",
+      },
+      {
+        nome: "Paty",
+        turma: "Análise de Algoritmos",
+      },
+      {
+        nome: "Joãozinho",
+        turma: "Programação OO",
+      },
+      {
+        nome: "Ju",
+        turma: "Engenharia de Requisitos",
+      }
+    ]
+    return(
+      <div className="container">
+        <Table alunos = {alunos}/>
+      </div>
+    ) 
+  }
 }
+
 
 export default App;
