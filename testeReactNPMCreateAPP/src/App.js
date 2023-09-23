@@ -39,7 +39,7 @@ class App extends Component {
     return(
       <div className="container">
         <Table alunos = {alunos}
-          removerAluno = {removerAluno}/>
+          removerAluno = {this.removerAluno}/>
       </div>
     ) 
   }
