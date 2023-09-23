@@ -13,7 +13,7 @@ const TableHeader = () =>{
 }
 const TableBody = (props) =>{
 
-    const rows = props.alunosETurmas.map( (row, index) =>{
+    const rows = props.alunos.map( (row, index) =>{
         return(
             <tr key={index}>
                 <td>{row.nome}</td>
@@ -34,7 +34,7 @@ class Table extends Component{
         return(
             <table>
                 <TableHeader />
-                <TableBody alunosETurmas={alunos}/>
+                <TableBody alunos={alunos}/>
             </table>
         )
     }
