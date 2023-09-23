@@ -18,6 +18,11 @@ const TableBody = (props) =>{
             <tr key={index}>
                 <td>{row.nome}</td>
                 <td>{row.turma}</td>
+                <td>
+                    <button onClick={() => props.removerAluno(index)}>
+                        Apagar
+                    </button>
+                </td>
             </tr>
         )
     })
@@ -30,11 +35,12 @@ const TableBody = (props) =>{
 }
 class Table extends Component{
     render(){ 
-        const {alunos} = this.props;
+        const {alunos, removerAluno} = this.props;
         return(
             <table>
                 <TableHeader />
-                <TableBody alunos={alunos}/>
+                <TableBody alunos={alunos}
+                    removerAluno={removerAluno} />
             </table>
         )
     }
