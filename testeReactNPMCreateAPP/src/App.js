@@ -4,8 +4,7 @@ import React, { Component } from 'react';
 import Table from './Table';
 
 class App extends Component {
-  render(){
-    const alunos = [
+  state = { alunos = [
       {
         nome: "Dudu",
         turma: "Programação Web",
@@ -23,6 +22,9 @@ class App extends Component {
         turma: "Engenharia de Requisitos",
       }
     ]
+          }
+  render(){
+   const {alunos} = this.state;
     return(
       <div className="container">
         <Table alunos = {alunos}/>
