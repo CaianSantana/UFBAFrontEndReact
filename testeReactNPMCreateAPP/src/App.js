@@ -1,49 +1,57 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
-import React, { Component } from 'react';
-import Table from './Table';
+import Table from './Table.js';
+import Form from './Form'
 
 class App extends Component {
-  state = { alunos = [
-      {
-        nome: "Dudu",
-        turma: "Programação Web",
+  
+  state = { alunos: [
+      /*{
+        name: 'Dudu',
+        classe: 'Programação Web',
       },
       {
-        nome: "Paty",
-        turma: "Análise de Algoritmos",
+        name: 'Paty',
+        classe: 'Análise de Algoritmos',
       },
       {
-        nome: "Joãozinho",
-        turma: "Programação OO",
+        name: 'Joãozinho',
+        classe: 'Programação 00',
       },
       {
-        nome: "Ju",
-        turma: "Engenharia de Requisitos",
-      }
+        name: 'Ju',
+        classe: 'Engenharia de Requisitos',
+      },*/
     ]
-          }
-  removerAluno = (index) =>{
-    const{alunos} = this.state;
+  }
+
+  removerAlunos = (index) => {
+    const {alunos} = this.state
     this.setState(
       {
-        alunos: alunos.filter(alunos,i)=>{
+        alunos: alunos.filter((aluno, i) => {
           return i !== index
         })
       }
     )
   }
-    
-  render(){
-   const {alunos} = this.state;
-    return(
-      <div className="container">
-        <Table alunos = {alunos}
-          removerAluno = {this.removerAluno}/>
-      </div>
-    ) 
+
+  render() {
+    const {alunos} = this.state;
+
+    return (
+      <>
+        <div className="container">
+          <h1>Tabela de Alunos</h1>
+          <Table 
+            alunos = {alunos} 
+            removerAlunos= {this.removerAlunos}/>
+            <Form />
+        </div>
+      </>
+    );
   }
 }
 
-
 export default App;
+
