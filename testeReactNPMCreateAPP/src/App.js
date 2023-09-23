@@ -27,7 +27,7 @@ class App extends Component {
     const{alunos} = this.state;
     this.setState(
       {
-        alunos: alunos.filter(aluno,i)=>{
+        alunos: alunos.filter(alunos,i)=>{
           return i == index
         })
       }
