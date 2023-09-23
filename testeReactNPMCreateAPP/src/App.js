@@ -28,7 +28,7 @@ class App extends Component {
     this.setState(
       {
         alunos: alunos.filter(alunos,i)=>{
-          return i == index
+          return i !== index
         })
       }
     )
@@ -38,7 +38,8 @@ class App extends Component {
    const {alunos} = this.state;
     return(
       <div className="container">
-        <Table alunos = {alunos}/>
+        <Table alunos = {alunos}
+          removerAluno = {removerAluno}/>
       </div>
     ) 
   }
