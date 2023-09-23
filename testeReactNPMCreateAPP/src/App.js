@@ -23,6 +23,17 @@ class App extends Component {
       }
     ]
           }
+  removerAluno = (index) =>{
+    const{alunos} = this.state;
+    this.setState(
+      {
+        alunos: alunos.filter(aluno,i)=>{
+          return i == index
+        })
+      }
+    )
+  }
+    
   render(){
    const {alunos} = this.state;
     return(
