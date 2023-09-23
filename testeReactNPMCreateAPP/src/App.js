@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Table from './Table.js';
-import Form from './Form'
+import Form from './Form';
 
 class App extends Component {
-  
-  state = { alunos: [
+  state = {
+    alunos: [
       /*{
         name: 'Dudu',
         classe: 'Programação Web',
@@ -22,31 +22,32 @@ class App extends Component {
         name: 'Ju',
         classe: 'Engenharia de Requisitos',
       },*/
-    ]
-  }
+    ],
+  };
 
-  removerAlunos = (index) => {
-    const {alunos} = this.state
-    this.setState(
-      {
-        alunos: alunos.filter((aluno, i) => {
-          return i !== index
-        })
-      }
-    )
-  }
+  removerAluno = (index) => {
+    const { alunos } = this.state;
+    this.setState({
+      alunos: alunos.filter((aluno, i) => {
+        return i !== index;
+      }),
+    });
+  };
+  handleSubmit = (alunoDisc) => {
+    this.setState({
+      alunos: [...this.state.alunos, alunoDisc],
+    });
+  };
 
   render() {
-    const {alunos} = this.state;
+    const { alunos } = this.state;
 
     return (
       <>
         <div className="container">
           <h1>Tabela de Alunos</h1>
-          <Table 
-            alunos = {alunos} 
-            removerAlunos= {this.removerAlunos}/>
-            <Form />
+          <Table alunos={alunos} removerAluno={this.removerAluno} />
+          <Form handleSubmit={this.handleSubmit} />
         </div>
       </>
     );
@@ -54,4 +55,3 @@ class App extends Component {
 }
 
 export default App;
-

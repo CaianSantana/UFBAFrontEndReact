@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class Form extends Component {
 
     initialState = {
-        name: '',
-        classe: '',
+        nome: '',
+        turma: '',
     }
 
     state = this.initialState;
@@ -23,26 +23,27 @@ class Form extends Component {
     }
 
     render(){
-        const{name, classe} = this.state;
+        const{nome, turma} = this.state;
 
         return (
             <form>
                 <label htmlFor="name">Nome</label>
                 <input 
                     type="text" 
-                    name="name"
-                    id="name"
-                    value={name}
+                    name="nome"
+                    id="nome"
+                    value={nome}
                     onChange={this.handleChange}
                 />
-                <label htmlFor="name">Turma</label>
+                <label htmlFor="turma">Turma</label>
                 <input 
                     type="text" 
-                    name="classe"
-                    id="classe"
-                    value={classe}
+                    name="turma"
+                    id="turma"
+                    value={turma}
                     onChange={this.handleChange}
                 />
+                <input type="button" value="submit" onClick={this.submitForm}/>
             </form>
         )
     }
